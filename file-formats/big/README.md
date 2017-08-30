@@ -1,8 +1,12 @@
-# Description:
+# BIG
+
+## Description
+
 Big files are an archive format, that was used in many game titles created by EA Studios
 
-# Specification:
-## Header
+## Specification
+
+### Header
 
 The header has a fixed size of 16 bytes, following the table below:
 
@@ -18,7 +22,7 @@ The header has a fixed size of 16 bytes, following the table below:
 * NUM_ENTRIES: Number of files that were packed into this archive
 * OFFSET_FIRST: The offset inside the file to the first entry
 
-## List of entries
+### List of entries
 
 After the header the follows a list with NUM_ENTRIES elements, each entry looks the following:
 
