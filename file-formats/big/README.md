@@ -10,12 +10,12 @@ Big files are an archive format, that was used in many game titles created by EA
 
 The header has a fixed size of 16 bytes, following the table below:
 
-| Offset | Bytes | Type | Name        |
-|--------|-------|------|-------------|
-| 0      | 4     |CHAR[]| FOURCC      |
-| 4      | 4     | UINT | SIZE        |
-| 8      | 4     | UINT | NUM_ENTRIES |
-| 12     | 4     | UINT | OFFSET_FIRST|
+| Offset | Bytes | Type | Name        | Endianness|
+|--------|-------|------|-------------|-----------|
+| 0      | 4     |CHAR[]| FOURCC      |   -       |
+| 4      | 4     | UINT | SIZE        |   LE      |
+| 8      | 4     | UINT | NUM_ENTRIES |   BE      |
+| 12     | 4     | UINT | OFFSET_FIRST|   BE      |
 
 * FOURCC: Identifies the string as valid big archive. The string may either be "BIG4" or "BIGF", depending on the version.
 * SIZE: The entire size of an big archive. Size of a single archive can not be greater than 2^32 bytes
@@ -26,14 +26,15 @@ The header has a fixed size of 16 bytes, following the table below:
 
 After the header the follows a list with NUM_ENTRIES elements, each entry looks the following:
 
-| Offset | Bytes | Type  | Name        |
-|--------|-------|-------|-------------|
-| 0      | 4     | UINT  | ENTRY_OFFSET|
-| 4      | 4     | UINT  | ENTRY_SIZE  |
-| 8      | N     |CSTRING| ENTRY_NAME  |
+| Offset | Bytes | Type  | Name        | Endianness|
+|--------|-------|-------|-------------|-----------|
+| 0      | 4     | UINT  | ENTRY_OFFSET|  BE       | 
+| 4      | 4     | UINT  | ENTRY_SIZE  |  BE       |
+| 8      | N     |CSTRING| ENTRY_NAME  |  -        |
 
 * ENTRY_OFFSET: specified the start of this entry inside the file (in bytes)
 * ENTRY_SIZE: the size of the specified entry
-* ENTRY_NAME: the name of this entry, read as a nullterminated string
+* ENTRY_NAME: the name of this entry, read as a nullterminated string. The maximum 
+  length is limited ny the Windows MAX_PATH (which is 260).
 
 
