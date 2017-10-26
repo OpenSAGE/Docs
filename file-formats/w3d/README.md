@@ -24,8 +24,8 @@ w3d is a chunk-based binary format. Chunks can optionally contain sub-chunks. Ev
 
 | Offset | Bytes | Type       | Name       |
 |--------|-------|------------|------------|
-| 0      | 4     | CHUNK_TYPE | CHUNK_TYPE |
-| 4      | 4     | UINT       | CHUNK_SIZE |
+| 0      | 4     | CHUNK_TYPE | ChunkType |
+| 4      | 4     | UINT       | ChunkSize |
 
 * CHUNK_TYPE: See below for chunk type enumeration
 * CHUNK_SIZE: MSB is 1 if the chunk contains sub-chunks, otherwise it's 0. Lower 31 bits are the chunk size.
@@ -34,7 +34,7 @@ w3d is a chunk-based binary format. Chunks can optionally contain sub-chunks. Ev
 
 | Value | Name               |
 |------:|--------------------|
-| 0x0   | [W3D_CHUNK_MESH](#w3d-chunk-mesh)                 |
+| 0x0   | [W3D_CHUNK_MESH](chunks/w3d-chunk-mesh)                 |
 | 0x2   | [W3D_CHUNK_VERTICES](#w3d-chunk-vertices)             |
 | 0x3   | [W3D_CHUNK_VERTEX_NORMALS](#w3d-chunk-vertex-normals)       |
 | 0xC   | W3D_CHUNK_MESH_USER_TEXT       |
@@ -56,35 +56,11 @@ w3d is a chunk-based binary format. Chunks can optionally contain sub-chunks. Ev
 | 0x2F  | W3D_CHUNK_VERTEX_MAPPER_ARGS1 |
 | 0x30  | W3D_CHUNK_TEXTURES |
 
-#### <a name="w3d-chunk-mesh"></a>W3D_CHUNK_MESH
-
-This is a container chunk that can contain these sub-chunks:
-
-* W3D_CHUNK_MESH_HEADER3
-* W3D_CHUNK_VERTICES
-* W3D_CHUNK_VERTEX_NORMALS
-* W3D_CHUNK_MESH_USER_TEXT
-* W3D_CHUNK_VERTEX_INFLUENCES
-* W3D_CHUNK_TRIANGLES
-* W3D_CHUNK_VERTEX_SHADE_INDICES
-* W3D_CHUNK_MATERIAL_INFO
-* W3D_CHUNK_SHADERS
-* W3D_CHUNK_VERTEX_MATERIALS
-* W3D_CHUNK_TEXTURES
-* W3D_CHUNK_MATERIAL_PASS
-* W3D_CHUNK_TANGENTS
-* W3D_CHUNK_BITANGENTS
-* W3D_CHUNK_SHADER_MATERIALS
-* W3D_CHUNK_PS2_SHADERS
-* W3D_CHUNK_AABTREE
-* W3D_CHUNK_VERTICES_2
-* W3D_CHUNK_NORMALS_2
-
 #### <a name="w3d-chunk-vertices"></a>W3D_CHUNK_VERTICES
 
 | Offset | Bytes | Type  | Name      |
 |--------|-------|-------|-----------|
-| 0      | 12 * N     | [W3D_VECTOR3](#w3d-vector3)[N]  | VERTICES   |
+| 0      | 12 * N     | [W3D_VECTOR3](#w3d-vector3)[N]  | Vertices   |
 
 N is the number of vertices as specified in the W3D_MESH_HEADER3 chunk.
 
@@ -92,7 +68,7 @@ N is the number of vertices as specified in the W3D_MESH_HEADER3 chunk.
 
 | Offset | Bytes | Type  | Name      |
 |--------|-------|-------|-----------|
-| 0      | 12 * N     | [W3D_VECTOR3](#w3d-vector3)[N]  | NORMALS   |
+| 0      | 12 * N     | [W3D_VECTOR3](#w3d-vector3)[N]  | Normals   |
 
 N is the number of vertices as specified in the W3D_MESH_HEADER3 chunk.
 
