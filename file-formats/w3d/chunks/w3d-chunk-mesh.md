@@ -2,7 +2,7 @@
 
 W3D_CHUNK_MESH is a container chunk that can contain these sub-chunks:
 
-* [W3D_CHUNK_MESH_HEADER3](w3d-chunk-mesh-header3)
+* [W3D_CHUNK_MESH_HEADER3](w3d-chunk-mesh-header3.md)
 * W3D_CHUNK_VERTICES
 * W3D_CHUNK_VERTEX_NORMALS
 * W3D_CHUNK_MESH_USER_TEXT

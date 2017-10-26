@@ -34,7 +34,7 @@ w3d is a chunk-based binary format. Chunks can optionally contain sub-chunks. Ev
 
 | Value | Name               |
 |------:|--------------------|
-| 0x0   | [W3D_CHUNK_MESH](chunks/w3d-chunk-mesh)                 |
+| 0x0   | [W3D_CHUNK_MESH](chunks/w3d-chunk-mesh.md)                 |
 | 0x2   | [W3D_CHUNK_VERTICES](#w3d-chunk-vertices)             |
 | 0x3   | [W3D_CHUNK_VERTEX_NORMALS](#w3d-chunk-vertex-normals)       |
 | 0xC   | W3D_CHUNK_MESH_USER_TEXT       |
