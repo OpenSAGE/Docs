@@ -13,3 +13,9 @@ Constant Data
 
 The constant variables that are used for the GUI are all stored in a ``.const`` file. :doc:`The specification of that 
 format is described here <const>`.
+
+Apt Data
+--------
+
+All parts of the GUI logic and display system are stored inside the ``.apt`` file. Before you are able to load the ``.apt`` file
+you are required to load the ``.const`` file to get the entry offset. :doc:`The specification of that format can be found here <apt>`.
