@@ -1,0 +1,6 @@
+Systems
+============
+
+.. toctree::
+
+   scripting/index

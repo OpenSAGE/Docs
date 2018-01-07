@@ -8,3 +8,4 @@ A place where we gather knowledge around the `SAGE game engine <https://en.wikip
    :caption: Documentation
 
    file-formats/index
+   systems/index
