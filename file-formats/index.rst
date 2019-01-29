@@ -5,5 +5,6 @@ File Formats
 
    apt/index
    big/index
+   sav/index
    w3d/index
    wak/index
