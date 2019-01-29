@@ -9,8 +9,7 @@ Description
 These files appear to store the complete state of the game engine at the time that the game was saved. This provides a valuable glimpse into the inner
 workings of the game engine.
 
-Thanks to [Omniblade](https://github.com/omniblade)
-for his help in figuring out this format.
+Thanks to `Omniblade <https://github.com/omniblade>`_ for his help in figuring out this format.
 
 Common Types
 ------------
