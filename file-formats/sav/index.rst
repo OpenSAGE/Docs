@@ -14,7 +14,7 @@ Thanks to `Omniblade <https://github.com/omniblade>`_ for his help in figuring o
 Common Types
 ------------
 
-Strings in `.sav` files are one of two types:
+Strings in ``.sav`` files are one of two types:
 
 * ASCII string: prefixed by the number of characters as a byte
 * Unicode string: prefixed by the number of characters as a byte. Since each character is 2 bytes, the actual number of bytes to read is double this number
@@ -24,7 +24,7 @@ File Structure
 
 A ``.sav`` file is a chunk-based binary format. The overall structure is:
 
-* Variable number of `CHUNK`s
+* Variable number of ``CHUNK``s
 * "SG_EOF" as an ASCII string (prefixed by length as a byte)
 
 A chunk has this structure:
